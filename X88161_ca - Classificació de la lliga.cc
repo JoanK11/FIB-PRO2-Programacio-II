@@ -19,29 +19,26 @@ bool comp(const equip& a, const equip& b) {
     return a.punts > b.punts;
 }
 
-void actualitza_partit(const Matrix& m, vector<equip>& v, int i, int j) {
+void actualitza_partit(vector<equip>& v, int i, int j, int g1, int g2) {
     // Actualitza els punts, gols a favor i gols en contra de cada equip
     // despres d'un partit
-        int g1 = m[i][j].first, g2 = m[i][j].second;
-        v[i].golsf += g1;
-        v[j].golsf += g2;
-        v[i].golsc += g2;
-        v[j].golsc += g1;
+        v[i].golsf += g1, v[j].golsf += g2;
+        v[i].golsc += g2, v[j].golsc += g1;
         
         if (g1 == g2) ++v[i].punts, ++v[j].punts;
         else if (g1 > g2) v[i].punts += 3;
         else v[j].punts += 3;
 }        
 
-Matrix read_matrix(int n, vector<equip>& v) {
-    Matrix m(n, Row(n));
+void lectura_partits(vector<equip>& v) {
+    int n = v.size();
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < n; ++j) {
-            cin >> m[i][j].first >> m[i][j].second;
-            if (i != j) actualitza_partit(m, v, i, j); 
+            int g1, g2;
+            cin >> g1 >> g2;
+            if (i != j) actualitza_partit(v, i, j, g1, g2); 
         }
     }
-    return m;
 }
 
 void inicialitza(vector<equip>& v) {
@@ -55,8 +52,8 @@ int main() {
     cin >> n;
     vector<equip> v(n);
     inicialitza(v);
-    Matrix m = read_matrix(n, v);
     
+    lectura_partits(v);
     sort(v.begin(), v.end(), comp);
     
     for (int i = 0; i < n; ++i) {
