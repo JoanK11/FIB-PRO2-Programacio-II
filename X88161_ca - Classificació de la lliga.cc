@@ -7,7 +7,7 @@ typedef vector< pair<int, int> > Row;
 typedef vector<Row> Matrix;
 
 struct equip {
-    int num, punts, golsf, golsc;
+    int num, punts = 0, golsf = 0, golsc = 0;
 };
 
 bool comp(const equip& a, const equip& b) {
@@ -41,20 +41,14 @@ void lectura_partits(vector<equip>& v) {
     }
 }
 
-void inicialitza(vector<equip>& v) {
-    int n = v.size();
-    for (int i = 0; i < n; ++i)
-        v[i].num = i + 1, v[i].punts = 0, v[i].golsf = 0, v[i].golsc = 0;
-}
-
 int main() {
     int n;
     cin >> n;
     vector<equip> v(n);
-    inicialitza(v);
+    for (int i = 0; i < n; ++i) v[i].num = i + 1; // Posem el num de cada equip
     
-    lectura_partits(v);
-    sort(v.begin(), v.end(), comp);
+    lectura_partits(v); // Llegim tots els partits
+    sort(v.begin(), v.end(), comp); // Ordenem els equips
     
     for (int i = 0; i < n; ++i) {
         cout << v[i].num << ' ' << v[i].punts << ' ' << v[i].golsf << ' ' << v[i].golsc << endl;
