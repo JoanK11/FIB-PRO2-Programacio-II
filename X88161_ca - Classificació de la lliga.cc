@@ -45,7 +45,7 @@ int main() {
     int n;
     cin >> n;
     vector<equip> v(n);
-    for (int i = 0; i < n; ++i) v[i].num = i + 1; // Posem el num de cada equip
+    for (int i = 0; i < n; ++i) v[i].num = ++i; // Posem el num de cada equip
     
     lectura_partits(v); // Llegim tots els partits
     sort(v.begin(), v.end(), comp); // Ordenem els equips
