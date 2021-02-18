@@ -16,3 +16,4 @@ int main() {
         cout << "La suma de la secuencia " << i << " es " << sum << endl;
     }
 }
+s
