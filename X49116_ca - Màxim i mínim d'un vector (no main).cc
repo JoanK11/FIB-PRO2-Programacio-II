@@ -43,4 +43,4 @@ void max_min3(const vector<int>& v, int& x, int& y)
         if (v[i] > x) x = v[i];
         if (v[i] < y) y = v[i];
     }
-} d
+}
