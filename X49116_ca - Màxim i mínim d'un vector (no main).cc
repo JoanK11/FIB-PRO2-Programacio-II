@@ -13,7 +13,7 @@ parint max_min1(const vector<int>& v)
     int n = v.size();
     for (int i = 1; i < n; ++i) {
         if (v[i] > x.prim) x.prim = v[i];
-        if (v[i] < x.seg) x.seg = v[i];
+        else if (v[i] < x.seg) x.seg = v[i];
     }
     return x;
 }
@@ -28,7 +28,7 @@ pair<int,int> max_min2(const vector<int>& v)
     p.first = v[0], p.second = v[0];
     for (int i = 1; i < n; ++i) {
         if (v[i] > p.first) p.first = v[i];
-        if (v[i] < p.second) p.second = v[i];
+        else if (v[i] < p.second) p.second = v[i];
     }
     return p;
 }
@@ -41,6 +41,6 @@ void max_min3(const vector<int>& v, int& x, int& y)
     int n = v.size();
     for (int i = 1; i < n; ++i) {
         if (v[i] > x) x = v[i];
-        if (v[i] < y) y = v[i];
+        else if (v[i] < y) y = v[i];
     }
 }
