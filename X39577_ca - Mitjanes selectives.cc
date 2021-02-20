@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include "Estudiant.hh"
 using namespace std;
 
 double mitjana(const vector<int>&v, int n) {
