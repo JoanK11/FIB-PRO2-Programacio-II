@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include "Estudiant.hh"
 using namespace std;
 
 vector< pair<int, double> > simplifica(const vector< pair<int, double> >& v) {
