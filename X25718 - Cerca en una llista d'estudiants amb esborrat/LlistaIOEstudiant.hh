@@ -8,4 +8,4 @@ void LlegirLlistaEstudiant(list<Estudiant>& l);
 
 void EscriureLlistaEstudiant(list<Estudiant>& l);
 // Pre: cert
-// Post: s’han escrit al canal estandar de sortida els elements de l
+// Post: s’han escrit al canal estandar de sortida els elements de la
