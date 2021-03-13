@@ -11,12 +11,10 @@ void repartir(queue<ParInt>& q, queue<ParInt>& q1, queue<ParInt>& q2) {
             q2.push(q.front());
             t2 += q.front().segon();
         }
-        
         else {
             q1.push(q.front());
             t1 += q.front().segon();
         }
-        
         q.pop();
     }
 }
