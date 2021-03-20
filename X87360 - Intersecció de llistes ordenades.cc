@@ -6,9 +6,10 @@ void inter(list<int>& uno, const list<int>& dos) {
  /* Post: uno pasa a ser la interseccion de U y dos */
  list<int>::iterator it1 = uno.begin();
  list<int>::const_iterator it2 = dos.begin();
- while (it1 != uno.end()) {
-   if (it2 == dos.end() or *it1 < *it2) it1 = uno.erase(it1);
+ while (it1 != uno.end() and it2 != dos.end()) {
+   if (*it1 < *it2) it1 = uno.erase(it1);
    else if (*it1 > *it2) ++it2;
    else ++it1;
   }
+  while (it1 != uno.end()) it1 = uno.erase(it1);
 }
