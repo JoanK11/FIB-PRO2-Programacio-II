@@ -13,5 +13,4 @@ static pair<node_arbreNari*, T> arbsuma_i(node_arbreNari* m) {
 
 void arbsuma(ArbreNari& asum) const {
     asum.primer_node = arbsuma_i(primer_node).first;
-    asum.N = N;
 }
